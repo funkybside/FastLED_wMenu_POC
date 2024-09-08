@@ -121,8 +121,8 @@ void juggle() {
 }
 
 // list of patterns that can be cycled through, each defined as a separate function
-typedef void (*SimplePatternList[])();
-SimplePatternList gPatterns = {rainbow, rainbowWithGlitter, confetti, sinelon, juggle, bpm};
+typedef void (*PatternList[])();
+PatternList gPatterns = {rainbow, rainbowWithGlitter, confetti, sinelon, juggle, bpm};
 
 void subloop_rotary() {
   // subset of loop that handles rotary encoder events
@@ -170,7 +170,7 @@ void subloop_leds() {
   
   // update the hue color if:
   //  -set to auto mode, and
-  //  - sufficient time has ellapsed
+  //  -sufficient time has ellapsed
   if (LCD.getHueMode() && (millis() - lastHueUpdate > LCD.getCurHueSpeed())) {
     LCD.incrementHue();
     lastHueUpdate = millis();
