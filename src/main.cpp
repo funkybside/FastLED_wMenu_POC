@@ -5,9 +5,6 @@
 
 FASTLED_USING_NAMESPACE
 
-// *** DEVNOTE: Add Pattern Auto Speed
-#define PATTERN_CHANGE_SECONDS 10
-
 // Declarations for LCD Display
 #define LCD_WIDTH 16
 #define LCD_HEIGHT 2
@@ -39,6 +36,7 @@ unsigned long lastButtonPress = 0;
 #define NUM_LEDS 32
 #define DEFAULT_BRIGHTNESS 32
 #define MAX_BRIGHTNESS 128
+#define PATTERN_CHANGE_SECONDS 10
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0])) // used to advance pattern in auto mode
 
 unsigned long lastHueUpdate = 0;  // used in place of EVERY_N_MILLISECONDS for hue update, since variable timing
